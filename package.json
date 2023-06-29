@@ -9,11 +9,14 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@datocms/cma-client-node": "^2.0.0",
     "@emotion/react": "^11.11.1",
     "@thepuzzlers/pieces": "^0.1.1",
+    "date-fns": "^2.30.0",
     "eslint": "8.43.0",
     "eslint-config-next": "13.4.7",
     "eslint-config-prettier": "^8.8.0",
+    "jsdom": "^22.1.0",
     "next": "13.4.7",
     "prettier": "^2.8.8",
     "react": "18.2.0",
