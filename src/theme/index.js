@@ -6,6 +6,8 @@ import { buttons, links, cards } from './elements';
 import { shadows, radii } from './styles';
 import { forms } from './forms';
 
+// we still need other breakpoints because Section or GridWrapper component pieces library still use 6 breakpoints to define the padding
+
 const breakpoints = [
   '@media screen and (min-width: 10000px) and (orientation: portrait)', // not triggered phone XL
   '@media screen and (min-width: 750px)',

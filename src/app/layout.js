@@ -1,3 +1,5 @@
+import './globals.css';
+
 import { NextThemeUiProvider } from 'theme/NextThemeUiProvider';
 
 export default function RootLayout({ children }) {
