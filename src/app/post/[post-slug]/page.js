@@ -46,7 +46,7 @@ export async function generateStaticParams() {
     `
   });
   if (data?.allPosts)
-    return data.allPosts.map((post) => ({ 'post-slug': post.slugForPosts }));
+    return data.allPosts.map((post) => ({ 'post-slug': post.slugForPost }));
   return [
     {
       slug: 'oke'
