@@ -15,7 +15,7 @@ const LANDING_PAGE_QUERY = `
 `;
 
 export default async function Home() {
-  const { isEnabled } = draftMode();
+  // const { isEnabled } = draftMode();
 
   function getPageRequest() {
     const { isEnabled } = draftMode();
@@ -26,18 +26,18 @@ export default async function Home() {
 
   const data = await performRequest(pageRequest);
 
-  if (isEnabled) {
-    return (
-      <DraftLandingPage
-        subscription={{
-          ...pageRequest,
-          initialData: data,
-          token: process.env.NEXT_DATOCMS_API_TOKEN,
-          environment: process.env.NEXT_DATOCMS_ENVIRONMENT || null
-        }}
-      />
-    );
-  }
+  // if (isEnabled) {
+  //   return (
+  //     <DraftLandingPage
+  //       subscription={{
+  //         ...pageRequest,
+  //         initialData: data,
+  //         token: process.env.NEXT_DATOCMS_API_TOKEN,
+  //         environment: process.env.NEXT_DATOCMS_ENVIRONMENT || null
+  //       }}
+  //     />
+  //   );
+  // }
 
   return <LandingPage data={data} />;
 }
