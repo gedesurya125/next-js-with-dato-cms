@@ -27,7 +27,7 @@ export const DevToggleDraftButton = ({ isDraftModeEnabled }) => {
 
   return (
     <Link
-      href={`http://localhost:3000/${
+      href={`http://localhost:3000${
         isDraftModeEnabled ? getPublishedVersionUrl() : getDraftVersionUrl()
       }`}
       sx={{

@@ -9,6 +9,10 @@ const LANDING_PAGE_QUERY = `
       headline
       title
     }
+    allPosts {
+      slugForPost
+      title
+    }
   }
 
 `;

@@ -34,8 +34,8 @@ const findUrlForItem = ({ item, itemType }) => {
   switch (itemType.attributes.api_key) {
     case 'landing_page':
       return `/`;
-    // case 'post':
-    //   return `/posts/${item.attributes.slug}`;
+    case 'post':
+      return `/posts/${item.attributes.slug}`;
     default:
       return null;
   }

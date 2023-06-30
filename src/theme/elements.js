@@ -91,7 +91,10 @@ const buttons = {
     borderColor: 'beige',
     color: 'primary',
     p: '1rem 2rem 1rem 2rem',
-    fontFeatureSettings: "'ss01' on, 'ss02' on, 'liga' off"
+    fontFeatureSettings: "'ss01' on, 'ss02' on, 'liga' off",
+    ':hover': {
+      bg: 'beige100'
+    }
   },
 
   clear: {
