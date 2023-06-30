@@ -18,10 +18,16 @@ const corsInitOptions = {
   }
 };
 
-const baseUrl = process.env.VERCEL_BRANCH_URL
+const publishedBaseUrl = process.env.VERCEL_URL
+  ? // Vercel auto-populates this environment variable
+    `https://${process.env.VERCEL_URL}`
+  : // Netlify auto-populates this environment variable
+    process.env.URL;
+
+const previewBaseUrl = process.env.VERCEL_BRANCH_URL
   ? // Vercel auto-populates this environment variable
     `https://${process.env.VERCEL_BRANCH_URL}`
-  : // Netlify auto-populates this environment variable
+  : // Netlify auto-populates this environment variable //TODO: if using netlify, take the different url for preview
     process.env.URL;
 
 const findUrlForItem = ({ item, itemType }) => {
@@ -48,15 +54,19 @@ export async function POST(request) {
   }
 
   const previewLinks = [
+    // {
+    //   label: 'Published version',
+    //   url: `${publishedBaseUrl}/api/exit-draft?redirect=${url}&secret=${
+    //     process.env.NEXT_DATOCMS_PREVIEW_SECRET || ''
+    //   }`
+    // },
     {
       label: 'Published version',
-      url: `${baseUrl}/api/exit-draft?redirect=${url}&secret=${
-        process.env.NEXT_DATOCMS_PREVIEW_SECRET || ''
-      }`
+      url: `${publishedBaseUrl}${url}`
     },
     {
       label: 'Draft version',
-      url: `${baseUrl}/api/draft?redirect=${url}&secret=${
+      url: `${previewBaseUrl}/api/draft?redirect=${url}&secret=${
         process.env.NEXT_DATOCMS_PREVIEW_SECRET || ''
       }`
     }
