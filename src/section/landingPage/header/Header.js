@@ -1,9 +1,7 @@
-import { Section, Heading, Paragraph } from 'components';
+import { Section, Heading, Paragraph } from 'theme/components';
 import React from 'react';
 
 export const Header = ({ data }) => {
-  console.log('this is the data', data);
-
   return (
     <Section>
       <Headline headline={data?.landingPage.headline} />
