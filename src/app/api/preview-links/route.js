@@ -27,7 +27,7 @@ const baseUrl = process.env.VERCEL_BRANCH_URL
 const findUrlForItem = ({ item, itemType }) => {
   switch (itemType.attributes.api_key) {
     case 'landing_page':
-      return '/';
+      return `/${item.attributes.slug}`;
     case 'post':
       return `/posts/${item.attributes.slug}`;
     default:
