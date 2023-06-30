@@ -1,7 +1,7 @@
 import { draftMode } from 'next/headers';
 import { redirect } from 'next/navigation';
 
-export async function GET() {
+export async function GET(request) {
   // Exit the current user from "Draft Mode". This function accepts no args.
 
   const secret = process.env.NEXT_DATOCMS_PREVIEW_SECRET;
