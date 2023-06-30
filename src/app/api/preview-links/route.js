@@ -35,7 +35,7 @@ const findUrlForItem = ({ item, itemType }) => {
     case 'landing_page':
       return `/`;
     case 'post':
-      return `/posts/${item.attributes.slug_for_post}`;
+      return `/post/${item.attributes.slug_for_post}`;
     default:
       return null;
   }
