@@ -28,8 +28,8 @@ const findUrlForItem = ({ item, itemType }) => {
   switch (itemType.attributes.api_key) {
     case 'landing_page':
       return `/`;
-    case 'post':
-      return `/posts/${item.attributes.slug}`;
+    // case 'post':
+    //   return `/posts/${item.attributes.slug}`;
     default:
       return null;
   }
@@ -50,7 +50,9 @@ export async function POST(request) {
   const previewLinks = [
     {
       label: 'Published version',
-      url: `${baseUrl}${url}`
+      url: `${baseUrl}/api/exit-draft?redirect=${url}&secret=${
+        process.env.NEXT_DATOCMS_PREVIEW_SECRET || ''
+      }`
     },
     {
       label: 'Draft version',
