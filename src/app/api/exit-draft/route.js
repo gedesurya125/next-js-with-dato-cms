@@ -2,8 +2,6 @@ import { draftMode } from 'next/headers';
 import { redirect } from 'next/navigation';
 
 export async function GET(request) {
-  // Exit the current user from "Draft Mode". This function accepts no args.
-
   const secret = process.env.NEXT_DATOCMS_PREVIEW_SECRET;
 
   const { searchParams } = new URL(request.url);
@@ -19,7 +17,6 @@ export async function GET(request) {
   }
 
   draftMode().disable();
-  // redirect('/');
 
   // Redirect to the homepage, or to the URL provided with the `redirect` query string parameter:
   const redirectUrl = new URL(
